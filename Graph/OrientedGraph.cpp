@@ -21,5 +21,6 @@ void OrientedGraph::addEdge(int fromId, int toId, R weight) {
     d_nodes[fromId]->addEdge(e);
     d_nodes[toId]->addEdge(e);
     d_nodes[fromId]->addAdjacent(pto);
+    d_nodes[toId]->addPrecedent(pfrom);
     d_weights[fromId].insert(std::pair<int,R>(toId,weight));
 }

@@ -20,6 +20,9 @@ void UnorientedGraph::addEdge(int fromId,int toId,R weight) {
     d_nodes[toId]->addEdge(e);
     d_nodes[fromId]->addAdjacent(pto);
     d_nodes[toId]->addAdjacent(pfrom);
+    d_nodes[toId]->addPrecedent(pfrom);
+    d_nodes[fromId]->addPrecedent(pto);
+
     d_weights[fromId].insert(std::pair<int,R>(toId,weight));
     d_weights[toId].insert(std::pair<int,R>(fromId,weight));
 }

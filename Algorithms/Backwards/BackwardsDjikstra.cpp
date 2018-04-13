@@ -40,9 +40,10 @@ void BackwardsDjikstra::solve(Problem &P) {
         if (xId == initial->getId()) {
             break;
         } else {
-            for (auto xx:x->getAdjacents()) {
+            for (auto xx:x->getPrecedents()) {
                 xxId=xx->getId();
-                R d=dx+g.getWeight(xxId,xId);
+                R w=g.getWeight(xxId,xId);
+                R d=dx+w;
                 if (!visited[xxId]) {
                     visited[xxId] = true;
                     distance[xxId]=d;

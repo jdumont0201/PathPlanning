@@ -41,5 +41,7 @@ int Graph::getNbEdges() const {
 }
 
 Types::R Graph::getWeight(int fromId, int toId) {
+    assert(fromId < d_weights.size());
+    assert(d_weights[fromId].find(toId) != d_weights[fromId].end());
     return d_weights[fromId][toId];
 }

@@ -23,20 +23,15 @@ protected:
     std::vector<pNode> d_nodes;
     std::vector<pEdge> d_edges;
 
-
 public:
     /**Initializes a Graph object with nbNodes
      * @param nbNodes
      */
     Graph(int nbNodes);
 
-
-
-
     /**Initializes a Graph from file in path
      * @param path
      */
-
     template<class T>
     void readFromFile(std::string path) {
         GraphReader reader;
