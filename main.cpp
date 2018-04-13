@@ -11,11 +11,12 @@
 #include "utils/GraphReader.h"
 #include "Algorithms/Problem.h"
 #include "Algorithms/Djikstra.h"
-
+#include "Algorithms/Astar.h"
 
 int main() {
     Graph g("../assets/2Dgraph.graph");
     Problem P(g,g.getNode(0),g.getNode(5));
     Djikstra::solve(P);
+    Astar::solve(P);
     return 0;
 }
