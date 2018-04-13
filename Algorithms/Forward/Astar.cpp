@@ -10,6 +10,7 @@
 #include "../../Graph/Node.h"
 #include <algorithm>
 #include "Astar.h"
+#include "../Result.h"
 
 
 void Astar::solve(Problem &P) {
@@ -28,7 +29,6 @@ void Astar::solve(Problem &P) {
 
     int xId,xxId;
     double dx;
-    std::vector<pNode> path;
     std::vector<R> distance(g.getNbNodes());  for(int i=0;i< distance.size();++i) distance[i]=INFINITY; distance[initial->getId()]=0;
     std::vector<int> pred(g.getNbNodes());
 
@@ -59,9 +59,18 @@ void Astar::solve(Problem &P) {
             }
         }
     }
-    for(int i=0;i<distance.size();++i){
-        std::cout << "Distance \t"<<i <<"=\t"<<distance[i]<< std::endl;
+
+    //store result
+    int i=goal->getId();
+    std::vector<int> path;
+    while( i != initial->getId()){
+        path.push_back(i);
+        i=pred[i];
     }
+    path.push_back(i);
+    Result R;
+    R.setPath(path);
+
 
 
 }

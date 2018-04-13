@@ -10,8 +10,8 @@
 #include "Graph/OrientedGraph.h"
 #include "utils/GraphReader.h"
 #include "Algorithms/Problem.h"
-#include "Algorithms/Forward/BackwardsDjikstra.h"
-#include "Algorithms/Backwards/BackwardsDjikstra.h"
+#include "Algorithms/Forward/Dijkstra.h"
+#include "Algorithms/Backwards/BackwardsDijkstra.h"
 #include "Algorithms/Forward/Astar.h"
 
 int main() {
@@ -19,6 +19,6 @@ int main() {
     Problem P(g,g.getNode(0),g.getNode(5));
     Djikstra::solve(P);
     Astar::solve(P);
-    BackwardsDjikstra::solve(P);
+    BackwardsDijkstra::solve(P);
     return 0;
 }

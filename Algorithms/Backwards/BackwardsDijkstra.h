@@ -7,7 +7,7 @@
 
 #include "../Solver.h"
 
-class BackwardsDjikstra : Solver {
+class BackwardsDijkstra : Solver {
 public:
     /**
      * @fn void Djikstra::solve(Problem &P)
