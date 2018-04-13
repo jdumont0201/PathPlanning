@@ -5,7 +5,7 @@
 #include "Edge.h"
 #include "Node.h"
 
-Edge::Edge(pNode from, pNode to, double weight) : d_from(from), d_to(to), d_weight(weight) {
+Edge::Edge(pNode from, pNode to, R weight) : d_from(from), d_to(to), d_weight(weight) {
 
 }
 

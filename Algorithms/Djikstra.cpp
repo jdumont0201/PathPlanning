@@ -16,20 +16,20 @@ void Djikstra::solve(Problem &P) {
     std::cout << "Solving using Djikstra " << std::endl;
 
     //SETUP
-    double INFINITY = 1000000.;
+    R INFINITY = 1000000.;
      Graph &g = P.cgetGraph();
     const pNode initial = P.cgetInitial();
     const pNode goal = P.cgetGoal();
     bool isReached = false;
     pNode x;
-    std::priority_queue<std::pair<double,pNode>,std::vector<std::pair<double,pNode>>,std::greater<std::pair<double,pNode>> > Q; //weight is first because first is default for compare
+    std::priority_queue<std::pair<R,pNode>,std::vector<std::pair<R,pNode>>,std::greater<std::pair<R,pNode>> > Q; //weight is first because first is default for compare
     Q.push(std::make_pair(0,initial));
     std::vector<bool> visited(g.getNbNodes());visited[0]=true;
 
     int xId,xxId;
     double dx;
     std::vector<pNode> path;
-    std::vector<double> distance(g.getNbNodes());  for(int i=0;i< distance.size();++i) distance[i]=INFINITY; distance[initial->getId()]=0;
+    std::vector<R> distance(g.getNbNodes());  for(int i=0;i< distance.size();++i) distance[i]=INFINITY; distance[initial->getId()]=0;
     std::vector<int> pred(g.getNbNodes());
 
     //RUN
@@ -45,7 +45,7 @@ void Djikstra::solve(Problem &P) {
         } else {
             for (auto xx:x->getAdjacents()) {
                 xxId=xx->getId();
-                double d=dx+g.getWeight(xId,xxId);
+                R d=dx+g.getWeight(xId,xxId);
                 if (!visited[xxId]) {
                     visited[xxId] = true;
                     distance[xxId]=d;

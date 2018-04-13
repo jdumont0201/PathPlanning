@@ -14,6 +14,8 @@ class Node;
 class Edge {
     typedef Types::pEdge pEdge;
     typedef Types::pNode pNode;
+    typedef Types::R R;
+
     const pNode d_from;
 private:
     const pNode d_to;
@@ -35,7 +37,7 @@ public:
      * @param to destination of the edge
      * @param weight weight of the edge
      */
-    Edge(pNode from, pNode to, double weight);
+    Edge(pNode from, pNode to, R weight);
 
 };
 std::ostream &operator<<(std::ostream &os, const Edge &e);

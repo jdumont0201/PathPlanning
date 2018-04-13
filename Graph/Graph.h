@@ -15,8 +15,9 @@
 class Graph {
     typedef Types::pEdge pEdge;
     typedef Types::pNode pNode;
+    typedef Types::R R;
 
-    std::vector<std::map<int, double>> d_weights;
+    std::vector<std::map<int, R>> d_weights;
     std::vector<pNode> d_nodes;
     std::vector<pEdge> d_edges;
 
@@ -75,7 +76,7 @@ public:
      * @param toId destination node id
      * @return
      */
-    double getWeight(int fromId,int toId) ;
+    R getWeight(int fromId,int toId) ;
 };
 
 

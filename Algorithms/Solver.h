@@ -14,6 +14,7 @@ class Solver {
 public:
     typedef Types::pEdge pEdge;
     typedef Types::pNode pNode;
+    typedef Types::R R;
 
     /**
      * Generic solver function to be overriden by derivated classes

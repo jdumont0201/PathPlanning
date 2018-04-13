@@ -25,7 +25,7 @@ void Graph::init(int nbNodes){
     for(int i=0;i<nbNodes;++i){
         auto n=std::make_shared<Node>(Node(i));
         d_nodes[i]=n;
-        d_weights[i]=std::map<int,double>();
+        d_weights[i]=std::map<int,R>();
     }
 }
 
@@ -34,7 +34,7 @@ Types::pNode Graph::getNode(int nodeId){
     assert( d_nodes[nodeId]);
     return d_nodes[nodeId];
 }
-void Graph::addEdge(int fromId,int toId,double weight) {
+void Graph::addEdge(int fromId,int toId,R weight) {
     pNode pfrom=getNode(fromId);
     pNode pto=getNode(toId);
     auto e=std::make_shared<Edge>(Edge(pfrom, pto, weight));
@@ -44,8 +44,8 @@ void Graph::addEdge(int fromId,int toId,double weight) {
     d_nodes[fromId]->addAdjacent(pto);
     d_nodes[toId]->addAdjacent(pfrom);
 
-    d_weights[fromId].insert(std::pair<int,double>(toId,weight));
-    d_weights[toId].insert(std::pair<int,double>(fromId,weight));
+    d_weights[fromId].insert(std::pair<int,R>(toId,weight));
+    d_weights[toId].insert(std::pair<int,R>(fromId,weight));
 }
 int Graph::getNbNodes() const{
     return d_nodes.size();
@@ -54,6 +54,6 @@ int Graph::getNbEdges() const {
     return d_edges.size();
 }
 
-double Graph::getWeight(int fromId,int toId) {
+Types::R Graph::getWeight(int fromId,int toId) {
     return d_weights[fromId][toId];
 }

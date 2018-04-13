@@ -20,6 +20,11 @@ public:
      * Shortcut to shared pointer to an edge
      */
     typedef std::shared_ptr<Edge> pEdge;
+    /**
+     * default computation type.
+     * useful for automatic differentiation
+     */
+     typedef double R;
 };
 
 
