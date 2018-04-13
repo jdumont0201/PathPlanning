@@ -5,6 +5,7 @@
 #ifndef PATHOPTIMIZATION_GRAPH_H
 #define PATHOPTIMIZATION_GRAPH_H
 
+#include "../utils/GraphReader.h"
 #include <string>
 #include <vector>
 #include <memory>
@@ -13,6 +14,7 @@
 #include "Edge.h"
 #include "../utils/Types.h"
 class Graph {
+protected:
     typedef Types::pEdge pEdge;
     typedef Types::pNode pNode;
     typedef Types::R R;
@@ -28,13 +30,25 @@ public:
      */
     Graph(int nbNodes);
 
+
+
+
     /**Initializes a Graph from file in path
      * @param path
      */
-    Graph(std::string path);
+
+    template<class T>
+    void readFromFile(std::string path) {
+        GraphReader reader;
+        T g = reader.readFile<T>(path);
+        d_nodes = g.d_nodes;
+        d_edges = g.d_edges;
+        d_weights = g.d_weights;
+    }
+
 
     /**Empty constructor
-    */
+        */
     Graph();
 
 
@@ -57,7 +71,8 @@ public:
      * @param toId id of destination
      * @param weight weight of the path from fromid to toId
      */
-    void addEdge(int fromId,int toId,double weight);
+    virtual void addEdge(int fromId,int toId,R weight) =0 ;
+
 
     /**
      * Returns the count of the nodes of the graph
