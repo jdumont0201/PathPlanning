@@ -5,7 +5,7 @@
 #ifndef PATHOPTIMIZATION_DJIKSTRA_H
 #define PATHOPTIMIZATION_DJIKSTRA_H
 
-#include "Solver.h"
+#include "../Solver.h"
 
 class Djikstra : Solver {
 public:

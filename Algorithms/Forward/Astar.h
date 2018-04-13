@@ -5,7 +5,7 @@
 #ifndef UNTITLED_ASTAR_H
 #define UNTITLED_ASTAR_H
 
-#include "Solver.h"
+#include "../Solver.h"
 
 class Astar:Solver {
 public:
