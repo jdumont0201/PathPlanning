@@ -1,6 +1,29 @@
 cmake_minimum_required(VERSION 3.10)
 project(untitled)
 
-set(CMAKE_CXX_STANDARD 11)
+add_subdirectory(include/glfw-3.2.1)
+include_directories(${GLFW_INCLUDE_DIRS})
 
-add_executable(untitled main.cpp Graph/Graph.cpp Graph/Graph.h Graph/Edge.cpp Graph/Edge.h Graph/Node.cpp Graph/Node.h utils/GraphReader.cpp utils/GraphReader.h Algorithms/Problem.cpp Algorithms/Problem.h Algorithms/Forward/Dijkstra.h Algorithms/Backwards/BackwardsDijkstra.h Algorithms/Solver.cpp Algorithms/Solver.h utils/Types.cpp utils/Types.h Algorithms/Forward/Astar.cpp Algorithms/Forward/Astar.h Graph/UnorientedGraph.cpp Graph/UnorientedGraph.h Graph/OrientedGraph.cpp Graph/OrientedGraph.h Algorithms/Result.cpp Algorithms/Result.h Algorithms/Backwards/BackwardsDijkstra.cpp Algorithms/Forward/Dijkstra.cpp)
+include_directories(include/freetype/include)
+
+
+set(CMAKE_CXX_STANDARD 17)
+set(SOURCES_TERRAIN core/Terrain/Terrain.cpp core/Terrain/Terrain.h core/Terrain/Box.cpp core/Terrain/Box.h)
+set(SOURCES_GRAPH core/Graph/Graph.cpp core/Graph/Graph.h core/Graph/Edge.cpp core/Graph/Edge.h core/Graph/Node.cpp core/Graph/Node.h core/Graph/UnorientedGraph.cpp core/Graph/UnorientedGraph.h core/Graph/OrientedGraph.cpp core/Graph/OrientedGraph.h)
+set(SOURCES_ALGORITHMS core/Algorithms/GenericProblem.cpp core/Algorithms/GenericProblem.h core/Algorithms/ShortestPath/Forwards/Dijkstra.h core/Algorithms/ShortestPath/Backwards/BackwardsDijkstra.h core/Algorithms/Solver.cpp core/Algorithms/Solver.h core/Algorithms/ShortestPath/Forwards/Astar.cpp core/Algorithms/ShortestPath/Forwards/Astar.h core/Algorithms/Result.cpp core/Algorithms/Result.h core/Algorithms/ShortestPath/Backwards/BackwardsDijkstra.cpp core/Algorithms/ShortestPath/Forwards/Dijkstra.cpp)
+set(SOURCES_UTILS core/utils/GraphReader.cpp core/utils/GraphReader.h core/utils/Types.cpp core/utils/Types.h )
+set(SOURCES_VISUALIZATION visualization/Window.cpp visualization/Window.h visualization/DataBinder.cpp visualization/DataBinder.h visualization/Primitives.cpp visualization/Primitives.h visualization/Launcher.cpp visualization/Launcher.h core/Algorithms/ShortestPath/ShortestPathProblem.cpp core/Algorithms/ShortestPath/ShortestPathProblem.h core/Terrain/Terrain2d.cpp core/Terrain/Terrain2d.h core/Terrain/Obstacle.cpp core/Terrain/Obstacle.h core/utils/Point2d.cpp core/utils/Point2d.h core/Algorithms/PathFinder/PathFinderProblem.cpp core/Algorithms/PathFinder/PathFinderProblem.h core/Algorithms/PathFinder/RTT.cpp core/Algorithms/PathFinder/RTT.h core/Terrain/BoundingBox.cpp core/Terrain/BoundingBox.h tasks/Global.cpp tasks/Global.h)
+
+
+
+find_package (OpenGL REQUIRED)
+
+add_executable(untitled main.cpp
+        ${SOURCES_TERRAIN}
+        ${SOURCES_GRAPH}
+        ${SOURCES_ALGORITHMS}
+        ${SOURCES_UTILS}
+        ${SOURCES_VISUALIZATION}
+       )
+
+target_link_libraries(${PROJECT_NAME} glfw ${OPENGL_LIBRARIES} -pthread ${CMAKE_SOURCE_DIR}/include/freetype/win64/freetype.dll)

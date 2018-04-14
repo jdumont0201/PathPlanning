@@ -6,19 +6,73 @@
 
 
 #include <iostream>
+#include <string>
+#include <thread>
 #include <vector>
-#include "Graph/OrientedGraph.h"
-#include "utils/GraphReader.h"
-#include "Algorithms/Problem.h"
-#include "Algorithms/Forward/Dijkstra.h"
-#include "Algorithms/Backwards/BackwardsDijkstra.h"
-#include "Algorithms/Forward/Astar.h"
+#include <functional>
+#include "core/Graph/OrientedGraph.h"
+#include "core/utils/GraphReader.h"
+#include "core/Algorithms/GenericProblem.h"
+#include "core/Algorithms/ShortestPath/Forwards/Dijkstra.h"
+#include "core/Algorithms/ShortestPath/Backwards/BackwardsDijkstra.h"
+#include "core/Algorithms/ShortestPath/Forwards/Astar.h"
+#include "core/Algorithms/ShortestPath/ShortestPathProblem.h"
+#include "core/Algorithms/PathFinder/PathFinderProblem.h"
+#include "core/Algorithms/PathFinder/RTT.h"
+#include "core/Terrain/Terrain2d.h"
+#include "visualization/DataBinder.h"
+#include "visualization/Window.h"
+#include "visualization/Launcher.h"
+
+void run() {
+    {
+        OrientedGraph g("../assets/2Dgraph.graph");
+        ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
+        Djikstra::solve(P);
+    }
+    {
+        OrientedGraph g("../assets/2Dgraph.graph");
+        ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
+        Astar::solve(P);
+
+    }
+    {
+        OrientedGraph g("../assets/2Dgraph.graph");
+        ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
+        BackwardsDijkstra::solve(P);
+
+    }
+    {
+        Terrain2d g("../assets/hall.terrain2d");
+        PathFinderProblem P(g, Point2d(1, 1), Point2d(8, 8));
+        RTT::solve(P);
+    }
+}
 
 int main() {
-    OrientedGraph g("../assets/2Dgraph.graph");
-    Problem P(g,g.getNode(0),g.getNode(5));
-    Djikstra::solve(P);
-    Astar::solve(P);
-    BackwardsDijkstra::solve(P);
+
+    run();
+    /* Global g = Global();
+     g.addJob([]() {
+         {
+             OrientedGraph g("../assets/2Dgraph.graph");
+             ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
+             BackwardsDijkstra::solve(P);
+         }
+     });
+      g.run();
+ *//*
+    Terrain T = Terrain();
+    T.acquire();
+
+    //std::thread t2(&run);
+    //t2.join();
+
+    DataBinder data = DataBinder(T);
+    Launcher L = Launcher(data);
+    L.launchVizualization();*/
+    //std::thread t1(&Launcher::launchVizualization, &L);
+    //t1.join();
+
     return 0;
 }

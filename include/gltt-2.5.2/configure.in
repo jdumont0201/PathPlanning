@@ -1,0 +1,82 @@
+# GLTT configure.in
+
+AC_INIT(FTBitmapFont.C)
+
+AM_INIT_AUTOMAKE(gltt, 2.5.2)
+
+dnl make $GLTT_DIR the default for the installation
+AC_PREFIX_DEFAULT(${GLTT_DIR:-/usr/local})
+
+dnl generate the config header
+AM_CONFIG_HEADER(config.h) dnl at the distribution this done
+
+dnl Checks for programs.
+dnl (breaks under newer autoconf - AC_CHECK_COMPILERS)
+AC_PROG_CPP
+AC_PROG_CXX
+AC_PROG_LIBTOOL
+AC_PROG_RANLIB
+AC_PROG_INSTALL
+
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS(sys/time.h unistd.h)
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_HEADER_TIME
+
+dnl Checks for library functions.
+AC_CHECK_FUNCS(gettimeofday select usleep)
+
+AC_PATH_TTF
+
+dnl I need to check for libsocket before testing X
+AC_CHECK_LIB(socket, socket, [LIBSOCKET="-lsocket -lnsl"]) dnl for Solaris
+AC_SUBST(LIBSOCKET)
+AC_CHECK_LIB(ucb, killpg, [LIBUCB="-lucb"]) dnl for Solaris2.4
+AC_SUBST(LIBUCB)
+
+AC_PATH_X
+AC_PATH_XTRA
+
+GLTT_PATH_X
+
+dnl Checks for libraries.
+
+dnl Replace `main' with a function in -lm:
+AC_CHECK_LIB(m, sin)
+dnl Replace `main' with a function in -lX11:
+AC_CHECK_LIB(X11, XOpenDisplay)
+dnl Replace `main' with a function in -lXext:
+AC_CHECK_LIB(Xext, XShmCreateImage)
+dnl Replace `main' with a function in -lICE:
+AC_CHECK_LIB(ICE, IceSetIOErrorHandler)
+#dnl Replace `main' with a function in -lMesaGL:
+#dnl AC_CHECK_LIB(MesaGL, glEnd)
+#dnl Replace `main' with a function in -lMesaGLU:
+#dnl AC_CHECK_LIB(MesaGLU, gluNewNurbsRenderer)
+dnl Replace `main' with a function in -lSM:
+AC_CHECK_LIB(SM, SmsSetErrorHandler)
+dnl Replace `main' with a function in -lXt:
+AC_CHECK_LIB(Xt, XtDisplay)
+dnl Replace `main' with a function in -lXi:
+AC_CHECK_LIB(Xi, XOpenDevice)
+dnl Replace `main' with a function in -lXmu:
+AC_CHECK_LIB(Xmu, XmuSimpleErrorHandler,,,-lXt)
+
+dnl Replace `main' with a function in -lglut:
+dnl AC_CHECK_LIB(glut, glutInit,,,$GL_INCLUDES $GL_LDFLAGS -l${GL_LIBNAME}GL -l${GL_LIBNAME}GLU $LIBSOCKET)
+
+AC_HAVE_GL
+
+AC_PATH_GLUT
+
+dnl output files
+topdir=`pwd`
+AC_SUBST(topdir)
+
+AC_OUTPUT([
+Makefile
+gltt.spec	
+])
