@@ -6,7 +6,7 @@
 #define UNTITLED_PATHFINDERPROBLEM_H
 
 
-#include "../../utils/Point2d.h"
+#include "../../utils/geometry/Point2d.h"
 #include "../../Terrain/Terrain2d.h"
 
 class PathFinderProblem {

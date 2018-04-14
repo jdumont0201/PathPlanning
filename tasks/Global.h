@@ -5,7 +5,7 @@
 #ifndef UNTITLED_GLOBAL_H
 #define UNTITLED_GLOBAL_H
 
-
+#include <functional>
 typedef std::function<void(void)> Job;
 
 class Global {

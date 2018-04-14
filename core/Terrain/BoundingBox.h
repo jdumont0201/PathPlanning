@@ -14,7 +14,10 @@ class BoundingBox {
 public:
     BoundingBox();
     BoundingBox(double xmin,double ymin,double xmax, double ymax);
-
+    double getMinX();
+    double getMinY();
+    double getMaxY();
+    double getMaxX();
 };
 
 

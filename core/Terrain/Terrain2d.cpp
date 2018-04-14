@@ -4,7 +4,7 @@
 
 #include "Terrain2d.h"
 #include "BoundingBox.h"
-#include "../utils/Point2d.h"
+#include "../utils/geometry/Point2d.h"
 #include <iostream>
 #include <algorithm>
 #include <fstream>
@@ -25,6 +25,9 @@ Terrain2d::Terrain2d(std::string path){
             std::istringstream iss(line);
                 double x, y;
                 double weight;
+                if( line =="-"){
+
+                }
                 if (!(iss >> x >> y)) {
                     break;
                 }else{

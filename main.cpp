@@ -52,27 +52,7 @@ void run() {
 int main() {
 
     run();
-    /* Global g = Global();
-     g.addJob([]() {
-         {
-             OrientedGraph g("../assets/2Dgraph.graph");
-             ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
-             BackwardsDijkstra::solve(P);
-         }
-     });
-      g.run();
- *//*
-    Terrain T = Terrain();
-    T.acquire();
 
-    //std::thread t2(&run);
-    //t2.join();
-
-    DataBinder data = DataBinder(T);
-    Launcher L = Launcher(data);
-    L.launchVizualization();*/
-    //std::thread t1(&Launcher::launchVizualization, &L);
-    //t1.join();
 
     return 0;
 }
