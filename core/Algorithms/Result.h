@@ -14,15 +14,6 @@ class Result {
     typedef Types::R R;
 
 
-public:
-    const std::vector<int> &getPath() const;
-    void setPath(const std::vector<int> &d_path);
-    R getCost() const;
-    void setCost(R d_cost);
-
-private:
-    R d_cost;
-    std::vector<int> d_path;
 };
 
 
