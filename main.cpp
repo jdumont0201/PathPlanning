@@ -26,18 +26,18 @@
 
 void run() {
     {
-        OrientedGraph g("../assets/2Dgraph.graph");
+        OrientedGraph g("../assets/2dgraph.graph");
         ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
         Djikstra::solve(P);
     }
     {
-        OrientedGraph g("../assets/2Dgraph.graph");
+        OrientedGraph g("../assets/2dgraph.graph");
         ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
         Astar::solve(P);
 
     }
     {
-        OrientedGraph g("../assets/2Dgraph.graph");
+        OrientedGraph g("../assets/2dgraph.graph");
         ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
         BackwardsDijkstra::solve(P);
 

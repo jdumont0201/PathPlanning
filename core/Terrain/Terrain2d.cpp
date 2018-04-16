@@ -4,7 +4,7 @@
 
 #include "Terrain2d.h"
 #include "BoundingBox.h"
-#include "../utils/geometry/Point2d.h"
+#include "../utils/Geometry/Point2d.h"
 #include <iostream>
 #include <algorithm>
 #include <fstream>
@@ -19,8 +19,8 @@ Terrain2d::Terrain2d(std::string path){
             std::cout << "File "<<path<<" not found" << std::endl;
             return;
         }
-        double INFINITY=1e16;
-        double xmax=-INFINITY,xmin=INFINITY,ymax=-INFINITY,ymin=INFINITY;
+        double inf=1e16;
+        double xmax=-inf,xmin=inf,ymax=-inf,ymin=inf;
         while (std::getline(f, line)) {
             std::istringstream iss(line);
                 double x, y;

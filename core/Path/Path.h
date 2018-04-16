@@ -12,7 +12,7 @@
 class Path {
     std::vector<PathUnit> d_units;
 public:
-    Path::Path();
+    Path();
     void addUnit(PathUnit &unit);
 };
 

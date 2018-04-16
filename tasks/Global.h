@@ -6,6 +6,7 @@
 #define UNTITLED_GLOBAL_H
 
 #include <functional>
+#include <vector>
 typedef std::function<void(void)> Job;
 
 class Global {

@@ -25,7 +25,7 @@ public:
      * Generic solver function to be overriden by derivated classes
      * @param P Problem definition object
      */
-    void solve(GenericProblem &P);
+    //static void solve(GenericProblem &P)=0;
 };
 
 

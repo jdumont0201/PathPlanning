@@ -5,6 +5,7 @@
 #ifndef UNTITLED_SHORTESTPATHRESULT_H
 #define UNTITLED_SHORTESTPATHRESULT_H
 
+#include "../Result.h"
 
 class ShortestPathResult :public Result{
     typedef Types::pEdge pEdge;

@@ -17,7 +17,6 @@ void Astar::solve(ShortestPathProblem &P) {
     std::cout << "Solving using Astar " << std::endl;
 
     //SETUP
-    R INFINITY = 1000000.;
     Graph &g = P.cgetGraph();
     const pNode initial = P.cgetInitial();
     const pNode goal = P.cgetGoal();
@@ -26,10 +25,11 @@ void Astar::solve(ShortestPathProblem &P) {
     Q.push(std::make_pair(0,initial));
     std::vector<bool> visited(g.getNbNodes());visited[0]=true;
     std::vector<R> guess(g.getNbNodes()); for(int i=0;i<guess.size();++i) guess[i]=abs(i-initial->getId());
+    double inf = 1000000;
 
     int xId,xxId;
     double dx;
-    std::vector<R> distance(g.getNbNodes());  for(int i=0;i< distance.size();++i) distance[i]=INFINITY; distance[initial->getId()]=0;
+    std::vector<R> distance(g.getNbNodes());  for(int i=0;i< distance.size();++i) distance[i]=inf; distance[initial->getId()]=0;
     std::vector<int> pred(g.getNbNodes());
 
     //RUN
@@ -68,8 +68,8 @@ void Astar::solve(ShortestPathProblem &P) {
         i=pred[i];
     }
     path.push_back(i);
-    Result R;
-    R.setPath(path);
+    //Result res;
+    //res.setPath(path);
 
 
 

@@ -16,7 +16,7 @@ void Djikstra::solve(ShortestPathProblem &P) {
     std::cout << "Solving using Djikstra " << std::endl;
 
     //SETUP
-    R INFINITY = 1000000.;
+    R inf  = 1000000.;
     Graph &g = P.cgetGraph();
     const pNode initial = P.cgetInitial();
     const pNode goal = P.cgetGoal();
@@ -27,7 +27,7 @@ void Djikstra::solve(ShortestPathProblem &P) {
 
     int xId,xxId;
     double dx;
-    std::vector<R> distance(g.getNbNodes());  for(int i=0;i< distance.size();++i) distance[i]=INFINITY; distance[initial->getId()]=0;
+    std::vector<R> distance(g.getNbNodes());  for(int i=0;i< distance.size();++i) distance[i]=inf; distance[initial->getId()]=0;
     std::vector<int> pred(g.getNbNodes()); pred[initial->getId()]=initial->getId();
 
     //RUN
@@ -66,7 +66,7 @@ void Djikstra::solve(ShortestPathProblem &P) {
         i=pred[i];
     }
     path.push_back(i);
-    Result R; R.setPath(path);
+//    Result R; R.setPath(path);
 
 
 }

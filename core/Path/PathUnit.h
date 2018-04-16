@@ -12,6 +12,7 @@ class PathUnit{
     Point2d d_from;
     Point2d d_to;
 public:
+    PathUnit();
     PathUnit(Point2d d_from,Point2d d_to);
     Point2d getFrom();
     Point2d getTo();

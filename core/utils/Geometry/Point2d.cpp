@@ -7,6 +7,9 @@
 Point2d::Point2d(double x,double y):d_x(x),d_y(y){
 
 }
+Point2d::Point2d(){
+
+}
 double Point2d::getX(){
     return d_x;
 };

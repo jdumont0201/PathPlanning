@@ -8,7 +8,7 @@
 
 #include <memory>
 #include <vector>
-#include "geometry/Point2d.h"
+#include "Geometry/Point2d.h"
 
 class Node;
 class Edge;

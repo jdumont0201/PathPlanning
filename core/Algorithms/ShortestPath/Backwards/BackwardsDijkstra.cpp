@@ -18,7 +18,7 @@ void BackwardsDijkstra::solve(ShortestPathProblem &P) {
     std::cout << "Solving using Backwards Djikstra " << std::endl;
 
     //SETUP
-    R INFINITY = 1000000.;
+    R inf = 1000000.;
     Graph &g = P.cgetGraph();
     const pNode initial = P.cgetInitial();
     const pNode goal = P.cgetGoal();
@@ -31,7 +31,7 @@ void BackwardsDijkstra::solve(ShortestPathProblem &P) {
     int xId,xxId;
     R dx;
     std::vector<pNode> path;
-    std::vector<R> distance(g.getNbNodes());  for(int i=0;i< distance.size();++i) distance[i]=INFINITY; distance[goal->getId()]=0;
+    std::vector<R> distance(g.getNbNodes());  for(int i=0;i< distance.size();++i) distance[i]=inf; distance[goal->getId()]=0;
     std::vector<int> pred(g.getNbNodes());
 
     //RUN

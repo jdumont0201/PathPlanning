@@ -5,7 +5,7 @@
 #include "PathFinderResult.h"
 
 const Path &PathFinderResult::getPath() const{
-    return d_path
+    return d_path;
 };
 void PathFinderResult::setPath(const Path &path){
     d_path=path;

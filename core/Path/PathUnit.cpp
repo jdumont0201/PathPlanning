@@ -10,3 +10,10 @@ Point2d PathUnit::getFrom(){
 Point2d PathUnit::getTo(){
     return d_to;
 };
+
+PathUnit::PathUnit() {
+
+};
+PathUnit::PathUnit(Point2d from,Point2d to):d_from(from),d_to(to) {
+
+};
