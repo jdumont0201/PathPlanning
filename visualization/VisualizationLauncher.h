@@ -7,10 +7,10 @@
 
 #include "DataBinder.h"
 
-class Launcher {
+class VisualizationLauncher {
     DataBinder d_data;
 public:
-    Launcher(DataBinder &db) ;
+    VisualizationLauncher(DataBinder &db) ;
 
     void launchVizualization();
 };

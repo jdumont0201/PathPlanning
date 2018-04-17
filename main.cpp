@@ -8,9 +8,10 @@
 #include "core/PathPlanning.h"
 #include "visualization/DataBinder.h"
 #include "visualization/Window.h"
-#include "visualization/Launcher.h"
+#include "visualization/VisualizationLauncher.h"
 
-void run() {
+
+int main() {
     {
         OrientedGraph g("../assets/simple.graph");
         ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
@@ -36,12 +37,6 @@ void run() {
         PathFinderProblem P(g, Point2d(1, 1), Point2d(8, 8));
         RTT::solve(P);
     }
-}
-
-int main() {
-
-    run();
-
 
     return 0;
 }
