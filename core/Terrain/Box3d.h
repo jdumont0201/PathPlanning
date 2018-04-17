@@ -5,26 +5,15 @@
 #ifndef UNTITLED_BOX_H
 #define UNTITLED_BOX_H
 
+#include "Box2d.h"
 
-class Box3d {
-    const double d_x;
-    const double d_y;
+class Box3d : public Box2d {
     const double d_z;
-    const double d_xx;
-    const double d_yy;
     const double d_zz;
-    const double d_width;
-    const double d_height;
     const double d_depth;
 public:
-    const double getX() const;
-    const double getY() const;
     const double getZ() const;
-    const double getXX() const;
-    const double getYY() const;
     const double getZZ() const;
-    const double getWidth() const;
-    const double getHeight() const;
     const double getDepth() const;
 
 public:
