@@ -20,7 +20,7 @@ void Node::addAdjacent(Node::pNode n) {
     d_adjacentNodes.push_back(n);
 }
 void Node::addPrecedent(Node::pNode n) {
-    d_precedentNodes.push_back(n);
+    d_antecedentNodes.push_back(n);
 }
 std::vector<Node::pEdge> Node::getEdges(){
     return d_edges;
@@ -29,6 +29,6 @@ std::vector<Node::pNode> Node::getAdjacents() {
     return d_adjacentNodes;
 
 }
-std::vector<Node::pNode> Node::getPrecedents() {
-    return d_precedentNodes;
+std::vector<Node::pNode> Node::getAntecedents() {
+    return d_antecedentNodes;
 }

@@ -18,7 +18,7 @@ class Node {
 
     std::vector<pEdge> d_edges;
     std::vector<pNode> d_adjacentNodes;
-    std::vector<pNode> d_precedentNodes;//for oriented nodes
+    std::vector<pNode> d_antecedentNodes;//for oriented nodes
 
 public:
     /*
@@ -43,7 +43,7 @@ public:
      * Returns a vector of the precedent pNodes, directed towards the current node
      * @return a vector of smart pointers to Nodes
      */
-    std::vector<pNode> getPrecedents();
+    std::vector<pNode> getAntecedents();
 
     /**
      * Returns a vector of the edges with vertex Node

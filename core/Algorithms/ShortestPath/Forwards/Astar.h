@@ -7,6 +7,7 @@
 
 #include "../../Solver.h"
 #include "../ShortestPathProblem.h"
+#include "../ShortestPathResult.h"
 
 class Astar:Solver<ShortestPathProblem> {
 public:
@@ -17,7 +18,7 @@ public:
      * @return void
      * */
 
-    static void solve(ShortestPathProblem &P);
+    static ShortestPathResult solve(ShortestPathProblem &P);
 };
 
 

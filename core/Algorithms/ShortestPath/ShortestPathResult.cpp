@@ -8,14 +8,25 @@ const std::vector<int> &ShortestPathResult::getPath() const {
     return d_path;
 }
 
-void ShortestPathResult::setPath(const std::vector<int> &d_path) {
-    ShortestPathResult::d_path = d_path;
+ShortestPathResult::ShortestPathResult(const std::vector<int> &path){
+    setPath(path);
+}
+void ShortestPathResult::setPath(const std::vector<int> &path) {
+    d_path = path;
 }
 
 ShortestPathResult::R ShortestPathResult::getCost() const {
     return d_cost;
 }
 
-void ShortestPathResult::setCost(R d_cost) {
-    ShortestPathResult::d_cost = d_cost;
+void ShortestPathResult::setCost(R cost) {
+    d_cost = cost;
+}
+
+
+std::ostream& operator<<(std::ostream& os, const ShortestPathResult& dt){
+    for(auto x : dt.getPath()){
+        os << x<<std::endl;
+    }
+return os;
 }

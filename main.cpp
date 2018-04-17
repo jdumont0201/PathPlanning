@@ -12,20 +12,23 @@
 
 void run() {
     {
-        OrientedGraph g("../assets/2dgraph.graph");
+        OrientedGraph g("../assets/simple.graph");
         ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
-        Djikstra::solve(P);
+        ShortestPathResult res = Djikstra::solve(P);
+        std::cout << res<<std::endl;
     }
     {
-        OrientedGraph g("../assets/2dgraph.graph");
+        OrientedGraph g("../assets/simple.graph");
         ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
-        Astar::solve(P);
+        ShortestPathResult res = Astar::solve(P);
+        std::cout << res<<std::endl;
 
     }
     {
-        OrientedGraph g("../assets/2dgraph.graph");
+        OrientedGraph g("../assets/simple.graph");
         ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
-        BackwardsDijkstra::solve(P);
+        ShortestPathResult res = BackwardsDijkstra::solve(P);
+        std::cout << res<<std::endl;
 
     }
     {

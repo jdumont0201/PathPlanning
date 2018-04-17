@@ -8,11 +8,12 @@
 #include "Dijkstra.h"
 #include "../../../Graph/Graph.h"
 #include "../../../Graph/Node.h"
+#include "../ShortestPathResult.h"
 #include <algorithm>
 
 
 
-void Djikstra::solve(ShortestPathProblem &P) {
+ShortestPathResult Djikstra::solve(ShortestPathProblem &P) {
     std::cout << "Solving using Djikstra " << std::endl;
 
     //SETUP
@@ -66,7 +67,11 @@ void Djikstra::solve(ShortestPathProblem &P) {
         i=pred[i];
     }
     path.push_back(i);
-    Result R; R.setPath(path);
+    std::reverse(path.begin(),path.end());//reverse order
 
+
+    //return
+    ShortestPathResult res(path);
+    return res;
 
 }

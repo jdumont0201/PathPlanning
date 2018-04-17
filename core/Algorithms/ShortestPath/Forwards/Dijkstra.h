@@ -7,6 +7,7 @@
 
 #include "../../Solver.h"
 #include "../ShortestPathProblem.h"
+#include "../ShortestPathResult.h"
 
 class Djikstra : Solver<ShortestPathProblem> {
 public:
@@ -16,7 +17,7 @@ public:
      * @param P Problem object that holds Graph and boundaries for the search problem
      * @return void
      * */
-    static void solve(ShortestPathProblem &P);
+    static ShortestPathResult solve(ShortestPathProblem &P);
 };
 
 

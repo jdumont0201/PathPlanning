@@ -7,7 +7,7 @@
 
 #include <vector>
 #include "../utils/Types.h"
-
+#include <iostream>
 class Result {
     typedef Types::pEdge pEdge;
     typedef Types::pNode pNode;

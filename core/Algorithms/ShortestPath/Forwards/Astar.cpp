@@ -11,9 +11,10 @@
 #include <algorithm>
 #include "Astar.h"
 #include "../../Result.h"
+#include "../../../Path/Path.h"
+#include <algorithm>
 
-
-void Astar::solve(ShortestPathProblem &P) {
+ShortestPathResult Astar::solve(ShortestPathProblem &P) {
     std::cout << "Solving using Astar " << std::endl;
 
     //SETUP
@@ -68,9 +69,12 @@ void Astar::solve(ShortestPathProblem &P) {
         i=pred[i];
     }
     path.push_back(i);
-    //Result res;
-    //res.setPath(path);
+    std::reverse(path.begin(),path.end());//reverse order
 
 
+
+    //return
+    ShortestPathResult res(path);
+    return res;
 
 }
