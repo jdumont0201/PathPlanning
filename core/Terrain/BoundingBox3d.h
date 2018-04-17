@@ -2,8 +2,8 @@
 // Created by jbmdu on 14/04/2018.
 //
 
-#ifndef UNTITLED_BOUNDINGBOX_H
-#define UNTITLED_BOUNDINGBOX_H
+#ifndef UNTITLED_BOUNDINGBOX3D_H
+#define UNTITLED_BOUNDINGBOX3D_H
 
 
 class BoundingBox3d {

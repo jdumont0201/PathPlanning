@@ -2,8 +2,8 @@
 // Created by jbmdu on 14/04/2018.
 //
 
-#ifndef UNTITLED_TERRAIN2D_H
-#define UNTITLED_TERRAIN2D_H
+#ifndef UNTITLED_TERRAIN3D_H
+#define UNTITLED_TERRAIN3D_H
 
 
 #include "Terrain.h"

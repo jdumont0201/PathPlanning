@@ -32,3 +32,6 @@ std::vector<Node::pNode> Node::getAdjacents() {
 std::vector<Node::pNode> Node::getAntecedents() {
     return d_antecedentNodes;
 }
+void Node::setLocation(Point3d & P){
+    d_pos.copy(P);
+}

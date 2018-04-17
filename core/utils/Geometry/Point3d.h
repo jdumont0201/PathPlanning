@@ -2,8 +2,8 @@
 // Created by jbmdu on 14/04/2018.
 //
 
-#ifndef UNTITLED_POINT2D_H
-#define UNTITLED_POINT2D_H
+#ifndef UNTITLED_POINT3D_H
+#define UNTITLED_POINT3D_H
 
 
 #include "../../Terrain/Terrain3d.h"
@@ -15,6 +15,7 @@ class Point3d {
 public:
     Point3d();
     Point3d(double x, double y,double z);
+    void copy(Point3d & P);
     double getX();
     double getY();
     double getZ();
@@ -33,6 +34,7 @@ public:
      * @return true if the point is in the box
      */
     bool isInBoundingBox(BoundingBox3d & B);
+
 };
 
 

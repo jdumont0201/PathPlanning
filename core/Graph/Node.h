@@ -9,12 +9,14 @@
 #include <memory>
 #include "Edge.h"
 #include "../utils/Types.h"
+#include "../utils/Geometry/Point3d.h"
+
 class Node {
     typedef Types::pEdge pEdge;
     typedef Types::pNode pNode;
 
     const int d_id;
-    const Point2d d_pos;
+     Point3d d_pos;
 
     std::vector<pEdge> d_edges;
     std::vector<pNode> d_adjacentNodes;
@@ -55,6 +57,9 @@ public:
     void addEdge(pEdge e);
     void addAdjacent(pNode n);
     void addPrecedent(pNode n);
+
+    void setLocation(Point3d & P);
+
 };
 
 

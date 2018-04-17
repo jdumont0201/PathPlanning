@@ -37,3 +37,8 @@ bool Point3d::isInBoundingBox(BoundingBox3d & B){
            d_z >= B.getMinZ() && d_y <= B.getMaxZ();
 
 }
+void Point3d::copy(Point3d & P) {
+    setX(P.getX());
+    setX(P.getY());
+    setX(P.getZ());
+}

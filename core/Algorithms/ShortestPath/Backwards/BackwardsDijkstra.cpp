@@ -51,12 +51,12 @@ ShortestPathResult BackwardsDijkstra::solve(ShortestPathProblem &P) {
                 if (!visited[xxId]) {
                     visited[xxId] = true;
                     distance[xxId]=d;
-                    pred[xxId]=xId;
+                    pred[xId]=xxId;
                     Q.push(make_pair(d,xx));
                 } else {
                     if(distance[xxId]>d){
                         distance[xxId]=d;
-                        pred[xxId]=xId;
+                        pred[xId]=xxId;
                     }
                 }
             }

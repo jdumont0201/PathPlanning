@@ -19,7 +19,7 @@ int main() {
         std::cout << res<<std::endl;
     }
     {
-        OrientedGraph g("../assets/simple.graph");
+        OrientedGraph g("../assets/simple.geograph");
         ShortestPathProblem P(g, g.getNode(0), g.getNode(5));
         ShortestPathResult res = Astar::solve(P);
         std::cout << res<<std::endl;
