@@ -1,19 +1,16 @@
 //
-// Created by jbmdu on 14/04/2018.
+// Created by jean on 17/04/18.
 //
 
-#ifndef UNTITLED_POINT2D_H
-#define UNTITLED_POINT2D_H
-
+#ifndef UNTITLED_GENERICPOINT_H
+#define UNTITLED_GENERICPOINT_H
 
 #include "../../Terrain/Terrain2d.h"
 
-class Point2d {
-    double d_x;
-    double d_y;
+
+class GenericPoint {
 public:
-    Point2d();
-    Point2d(double x, double y);
+    GenericPoint();
     double getX();
     double getY();
     void setX(double x);
@@ -33,4 +30,4 @@ public:
 };
 
 
-#endif //UNTITLED_POINT2D_H
+#endif //UNTITLED_GENERICPOINT_H

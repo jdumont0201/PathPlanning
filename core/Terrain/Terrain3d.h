@@ -8,23 +8,24 @@
 
 #include "Terrain.h"
 #include "Obstacle.h"
-#include "BoundingBox2d.h"
+#include "BoundingBox3d.h"
 #include <string>
 
-class Point2d;
+class Point3d;
 
-class Terrain2d : public Terrain {
+class Terrain3d : public Terrain {
     double d_W;
     double d_H;
-    BoundingBox2d d_boundingbox;
-    std::vector<Point2d> d_vertices;
+    double d_D;
+    BoundingBox3d d_boundingbox;
+    std::vector<Point3d> d_vertices;
     std::vector<Obstacle> d_obstacles;
 public:
     /**
      *
      * @param path relative path of the file
      */
-    Terrain2d(std::string path);
+    Terrain3d(std::string path);
 };
 
 

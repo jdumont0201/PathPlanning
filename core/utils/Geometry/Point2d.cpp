@@ -25,7 +25,7 @@ void Point2d::setY(double y){
 bool Point2d::isInFreespace(Terrain2d & T){
     return false;
 }
-bool Point2d::isInBoundingBox(BoundingBox & B){
+bool Point2d::isInBoundingBox(BoundingBox2d & B){
     return d_x >= B.getMinX() && d_x <= B.getMaxX() &&
            d_y >= B.getMinY() && d_y <= B.getMaxY();
 

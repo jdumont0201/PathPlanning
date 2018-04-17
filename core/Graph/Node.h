@@ -14,9 +14,11 @@ class Node {
     typedef Types::pNode pNode;
 
     const int d_id;
+    const Point2d d_pos;
+
     std::vector<pEdge> d_edges;
     std::vector<pNode> d_adjacentNodes;
-    std::vector<pNode> d_precedentNodes;
+    std::vector<pNode> d_precedentNodes;//for oriented nodes
 
 public:
     /*

@@ -6,14 +6,14 @@
 #define UNTITLED_BOUNDINGBOX_H
 
 
-class BoundingBox {
+class BoundingBox2d {
     double d_minX;
     double d_maxX;
     double d_minY;
     double d_maxY;
 public:
-    BoundingBox();
-    BoundingBox(double xmin,double ymin,double xmax, double ymax);
+    BoundingBox2d();
+    BoundingBox2d(double xmin,double ymin,double xmax, double ymax);
     double getMinX();
     double getMinY();
     double getMaxY();
