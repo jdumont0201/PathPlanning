@@ -3,6 +3,7 @@ A set of shortest path computation algorithms over a graph
 
 
 ##Example
+```
 #include "core/PathPlanning.h"
 
 
@@ -23,3 +24,4 @@ int main() {
 
     return 0;
 }
+```
