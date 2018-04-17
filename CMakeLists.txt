@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(untitled)
 
-add_subdirectory(include/glfw-3.2.1)
 include_directories(${GLFW_INCLUDE_DIRS})
-
 include_directories(include/freetype/include)
 
 
@@ -31,4 +29,4 @@ add_executable(untitled main.cpp
         ${SOURCES_VISUALIZATION}
        )
 
-target_link_libraries(${PROJECT_NAME}  glfw ${OPENGL_LIBRARIES} -pthread ${CMAKE_SOURCE_DIR}/include/freetype/win64/freetype.dll)
+target_link_libraries(${PROJECT_NAME}  glfw ${OPENGL_LIBRARIES} ${GLFW_LIBRARIES} -pthread ${CMAKE_SOURCE_DIR}/include/freetype/win64/freetype.dll)
