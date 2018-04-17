@@ -5,21 +5,7 @@
  * */
 
 
-#include <iostream>
-#include <string>
-#include <thread>
-#include <vector>
-#include <functional>
-#include "core/Graph/OrientedGraph.h"
-#include "core/utils/GraphReader.h"
-#include "core/Algorithms/GenericProblem.h"
-#include "core/Algorithms/ShortestPath/Forwards/Dijkstra.h"
-#include "core/Algorithms/ShortestPath/Backwards/BackwardsDijkstra.h"
-#include "core/Algorithms/ShortestPath/Forwards/Astar.h"
-#include "core/Algorithms/ShortestPath/ShortestPathProblem.h"
-#include "core/Algorithms/PathFinder/PathFinderProblem.h"
-#include "core/Algorithms/PathFinder/RTT.h"
-#include "core/Terrain/Terrain2d.h"
+#include "core/PathPlanning.h"
 #include "visualization/DataBinder.h"
 #include "visualization/Window.h"
 #include "visualization/Launcher.h"

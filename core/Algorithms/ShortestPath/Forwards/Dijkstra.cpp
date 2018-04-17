@@ -66,7 +66,7 @@ void Djikstra::solve(ShortestPathProblem &P) {
         i=pred[i];
     }
     path.push_back(i);
-//    Result R; R.setPath(path);
+    Result R; R.setPath(path);
 
 
 }

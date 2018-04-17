@@ -6,14 +6,14 @@
 #define UNTITLED_TERRAIN_H
 
 #include <vector>
-#include "Box.h"
+#include "Box3d.h"
 
 class Terrain {
-    std::vector<Box> d_boxes;
+    std::vector<Box3d> d_boxes;
 public:
     Terrain();
     void acquire();
-    std::vector<Box> getBoxes();
+    std::vector<Box3d> getBoxes();
 };
 
 

@@ -10,9 +10,9 @@
 
 class Point2d;
 
-class Obstacle {
+class Obstacle2d {
     std::vector<Point2d> & d_vertices;
-    Obstacle(std::vector<Point2d> & vertices);
+    Obstacle2d(std::vector<Point2d> & vertices);
 };
 
 

@@ -5,11 +5,11 @@
 #include "Terrain.h"
 Terrain::Terrain() {}
 void Terrain::acquire() {
-    d_boxes.push_back(Box(10,10,10,10,10,10));
+    d_boxes.push_back(Box3d(10,10,10,10,10,10));
 
 }
 
-std::vector<Box> Terrain::getBoxes(){
+std::vector<Box3d> Terrain::getBoxes(){
     return d_boxes;
 
 };

@@ -6,7 +6,7 @@
 #define UNTITLED_BOX_H
 
 
-class Box {
+class Box3d {
     const double d_x;
     const double d_y;
     const double d_z;
@@ -28,7 +28,7 @@ public:
     const double getDepth() const;
 
 public:
-    Box(double x,double y,double z,double width,double height, double d_depth);
+    Box3d(double x,double y,double z,double width,double height, double d_depth);
 };
 
 

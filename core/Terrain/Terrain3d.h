@@ -7,7 +7,7 @@
 
 
 #include "Terrain.h"
-#include "Obstacle.h"
+#include "Obstacle2d.h"
 #include "BoundingBox3d.h"
 #include <string>
 
@@ -19,7 +19,7 @@ class Terrain3d : public Terrain {
     double d_D;
     BoundingBox3d d_boundingbox;
     std::vector<Point3d> d_vertices;
-    std::vector<Obstacle> d_obstacles;
+    std::vector<Obstacle2d> d_obstacles;
 public:
     /**
      *
