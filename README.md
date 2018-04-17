@@ -2,7 +2,10 @@
 A set of shortest path computation algorithms over a graph.
 Uses STL vectors and priority queues.
 
-
+## Graph format
+First line: nb of nodes
+Then one edge per line
+ORIGIN_NODEID DEST_NODEID COST 
 ## Example
 ```
 #include "core/PathPlanning.h"
