@@ -2,7 +2,7 @@
 A set of shortest path computation algorithms over a graph
 
 
-##Example
+## Example
 ```
 #include "core/PathPlanning.h"
 
