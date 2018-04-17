@@ -1,5 +1,6 @@
 # PathPlanning
-A set of shortest path computation algorithms over a graph
+A set of shortest path computation algorithms over a graph.
+Uses STL vectors and priority queues.
 
 
 ## Example
